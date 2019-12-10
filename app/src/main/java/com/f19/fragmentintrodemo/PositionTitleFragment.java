@@ -20,7 +20,7 @@ import android.widget.TextView;
  */
 
 interface Listener {
-    void onItemClick(long id);
+    void onItemClick(int id);
 }
 public class PositionTitleFragment extends ListFragment {
 
@@ -51,6 +51,6 @@ public class PositionTitleFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         if (listener != null)
-            listener.onItemClick(id);
+            listener.onItemClick(position);
     }
 }

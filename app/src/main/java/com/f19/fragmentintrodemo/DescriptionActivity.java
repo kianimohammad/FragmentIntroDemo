@@ -16,7 +16,7 @@ public class DescriptionActivity extends AppCompatActivity {
 
         DescriptionFragment descriptionFragment = (DescriptionFragment) getSupportFragmentManager().findFragmentById(R.id.description_frag);
         Intent intent = getIntent();
-        int id = (int) intent.getExtras().get(TAG);
-        descriptionFragment.setPosition_id(id);
+        int id = intent.getExtras().getInt(TAG);
+        descriptionFragment.displayDetails(id);
     }
 }

@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:name="com.f19.fragmentintrodemo.PositionTitleFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".PositionActivity">
 
-<!--    <Button-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:onClick="showDescription"-->
-<!--        android:text="Show Description"-->
-<!--        android:id="@+id/btn" />-->
+    <fragment
+        android:id="@+id/position_frag"
+        android:name="com.f19.fragmentintrodemo.PositionTitleFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <!--    <Button-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:onClick="showDescription"-->
+    <!--        android:text="Show Description"-->
+    <!--        android:id="@+id/btn" />-->
 
 
-</fragment>
+</LinearLayout>
