@@ -1,6 +1,7 @@
 package com.f19.fragmentintrodemo;
 
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -15,9 +16,21 @@ import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
+ *
  */
+
+interface Listener {
+    void onItemClick(long id);
+}
 public class PositionTitleFragment extends ListFragment {
 
+    private Listener listener;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.listener = (Listener) context;
+    }
 
     public PositionTitleFragment() {
         // Required empty public constructor
@@ -37,6 +50,7 @@ public class PositionTitleFragment extends ListFragment {
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
-        super.onListItemClick(l, v, position, id);
+        if (listener != null)
+            listener.onItemClick(id);
     }
 }

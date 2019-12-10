@@ -2,9 +2,12 @@ package com.f19.fragmentintrodemo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 public class DescriptionActivity extends AppCompatActivity {
+
+    public static final String TAG = "id";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -12,6 +15,8 @@ public class DescriptionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_description);
 
         DescriptionFragment descriptionFragment = (DescriptionFragment) getSupportFragmentManager().findFragmentById(R.id.description_frag);
-        descriptionFragment.setPosition_id(1);
+        Intent intent = getIntent();
+        int id = (int) intent.getExtras().get(TAG);
+        descriptionFragment.setPosition_id(id);
     }
 }
